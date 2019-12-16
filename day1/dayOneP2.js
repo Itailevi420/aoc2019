@@ -1,14 +1,13 @@
 const { input, calculateFuel } = require('./shared')
 
+result = input.reduce((acc, cur) => {
+  while ((cur = calculateFuel(cur)) > 0) {
+     acc += cur
+  }
+  return acc;
+}, 0)
 
-
-  const fuelModule = (n) => {
-    return n<9 ? 0 : (n = Math.floor(n/3)-2) + fuelModule(n)
-  };
- result = input.reduce((acc, cur, idx, src) => {
-     return acc += fuelModule(cur) ;
-  }, 0)
- console.log(result)
+console.log(result)
 
  
 
